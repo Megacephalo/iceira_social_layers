@@ -8,21 +8,6 @@ namespace iceira_pedestrian_layer
 {
   PedestrianLayer::PedestrianLayer() {} 
   
-  void PedestrianLayer::onInitialize()
-  {
-  }
-
-  void PedestrianLayer::reconfigureCB(costmap_2d::GenericPluginConfig&, uint32_t)
-  {
-  }
-
-  void PedestrianLayer::updateBounds(double, double, double, double*, double*, double*, double*)
-  {
-  }
-
-  void PedestrianLayer::updateCosts(costmap_2d::Costmap2D&, int, int, int, int)
-  {
-  }
 
 
 
