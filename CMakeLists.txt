@@ -10,11 +10,15 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  pluginlib
+  spencer_tracking_msgs
+  geometry_msgs
+  nav_msgs
+  tf
 )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
-
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -121,10 +125,16 @@ include_directories(
 )
 
 ## Declare a C++ library
-add_library(iceira_social_layers
+add_library(${PROJECT_NAME}
    src/pedestrian_layer.cpp
  )
-target_link_libraries(iceira_social_layers
+
+add_dependencies(${PROJECT_NAME}
+   spencer_tracking_msgs)
+add_dependencies(${PROJECT_NAME}
+   ${PROJECT_NAME} gencfg
+   )   
+target_link_libraries(${PROJECT_NAME}
    ${catkin_LIBRARIES}
 )
 
